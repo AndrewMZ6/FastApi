@@ -33,10 +33,13 @@ async def update_todo(id:int, body: dict) -> dict:
 			return {"data":"successfull!"}
 	return{"data":"unsuccessfull!"}
 
-# Delte --> delete todo
+# Delete --> delete todo
 @app.delete("/todo/{id}", tags = ["todos"])
-async def delete_todo():
-	todos.remove(int(id))
+async def delete_todo(id:int) -> dict:
+	for todo in todos:
+		if int(todo["id"]) == id:
+			todos.remove(todo)
+			return {"data":f"the todo N {id} was remover succesfully {type(id)}"}
 
 
 todos = [
