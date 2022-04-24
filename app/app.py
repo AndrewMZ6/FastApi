@@ -16,7 +16,7 @@ async def get_todos() -> dict:
 
 # Post --> create todo
 @app.post("/todo", tags = ["todos"])
-async def create_todo(task: dict) -> dict:
+async def create_todo(task:dict) -> dict:
 	try:
 		todos.append(task)
 		return {"data":"successfull!"}
