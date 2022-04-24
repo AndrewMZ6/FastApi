@@ -1,1 +1,3 @@
 ToDoProjVenv
+*.pyc
+app/__pycache__/
